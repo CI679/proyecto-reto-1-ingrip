@@ -244,9 +244,54 @@ search_info() {
     pause
 }
 
-#funcion para borrar, dejo hecha la pura funcion para que la desarrollen ustedes
+#funcion para borrar
 delete_info() {
-    echo "TERMINAR FUNCION"
+  local file=$1
+  clear_screen
+  show_title "Eliminar Información"
+  
+  #verificar que no este vacio
+  if [ ! -s "$file" ]; then
+      show_error "NO hay información en el archivo."
+      return
+  fi
+
+  #Mostrar el contenido del archivo
+  echo "Información del archivo:"
+  cat "$file"
+  echo "------------------------------------------------------"
+  
+  #bucle para la linea a eliminar
+  while true; do
+    #el usuario pone que linea quiere eliminar
+    echo "Ingrese la línea que desea eliminar (número de línea):"
+    echo "Ingrese 0 para salir"
+    read line
+    total_lines=$(wc -l < "$file")
+
+    #se checa que no sea un decimal o un string
+    if ! [[ "$line" =~ ^[0-9]+$ ]]; then
+      show_error "Debe ingresar un número entero válido."
+      continue
+    fi
+
+    #en caso de que ingrese 0 se sale del bucle(por si puso la opcion equivocada)
+    if [ "$line" -eq 0 ]; then
+      show_info "Saliendo sin eliminar ninguna línea..."
+      break  #Salir del bucle sin eliminar
+    fi
+
+    #verificar si el número de línea es válido
+    if [ "$line" -lt 1 ] || [ "$line" -gt "$total_lines" ]; then
+      show_error "Debe ingresar un número válido dentro del rango de líneas. Total líneas: $total_lines"
+      continue
+    fi
+
+    # Eliminar la línea seleccionada
+    sed -i "${line}d" "$file"
+    show_success "Línea eliminada correctamente"
+    break  # Salir del bucle
+  done
 }
 
 #funcion para leer la "base de datos" de la info, que es el archivo de texto (nomas es poner un cat y una validacion si no está vacio el archivo)
