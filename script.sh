@@ -296,7 +296,25 @@ delete_info() {
 
 #funcion para leer la "base de datos" de la info, que es el archivo de texto (nomas es poner un cat y una validacion si no está vacio el archivo)
 read_database() {
-    echo "TERMINAR FUNCION"
+    local file=$1
+    clear_screen
+    show_title "Base de Información de $file" #Se muestra el nombre del archivo
+    
+    #Aqui se hace la validación para ver que el archivo no este vacio o que no exista
+    if [ ! -s "$file" ]; then
+        #en caso de que el archivo este vacio o no exista se muestra el siguiente mensaje
+        show_error "El archivo $file está vacío o no existe."
+    else
+        #Si el archivo existe y tiene contenido entonces se puede leer
+        echo "------------------------------------------------------"
+        show_info "Contenido de $file:"
+        cat "$file" | while read -r line; do
+            echo "  $line" #Espacios para que den mejor estetica
+        done
+        echo "------------------------------------------------------"
+    fi
+    
+    pause
 }
 
 
