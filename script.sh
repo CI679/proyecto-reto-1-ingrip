@@ -48,12 +48,6 @@ show_title() {
     echo "------------------------------------------------------"
 }
 
-# funcin para pausar hasta quese presione una tecla
-pause() {
-    echo
-    read -p "Presione cualquier tecla para continuar..." -n1 -s     #read -p muestra un prompt, -n1 lee solo un caracter, -s hace que no muestre la letra que se puso
-    echo
-}
 # git commit -m "se añadieron todos los menús,y lo relacionado para su funcionamiento, funcion para validar archivos, agregar info, buscar info, y se dejó lista para completar la funcion 'borrar' y 'leer' el archivo. Y se añadió tambien la funcion main. no faltan mas funciones por definir"
 
 
@@ -241,7 +235,6 @@ search_info() {
     # si hay resultados, se imprime una linea separador a
     # si no hay coincidencias imprime que no se encontraron resultados
 
-    pause
 }
 
 #funcion para borrar
@@ -314,7 +307,6 @@ read_database() {
         echo "------------------------------------------------------"
     fi
     
-    pause
 }
 
 
