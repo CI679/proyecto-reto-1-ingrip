@@ -6,7 +6,7 @@ RUN apk add --no-cache bash
 #/app se establece como el directorio donde trabajeremos
 WORKDIR /app
 
-COPY script.sh .
+COPY . .
 RUN chmod +x script.sh
 
 #Configuracion del comando de inicio
