@@ -78,14 +78,10 @@ chmod +x script.sh # Dar permisos de ejecución
 ./script.sh -t # Para metodologías tradicionales
 ```
 
-#### Opción 2: Usando Docker
-
+#### Opción 2: Usando la imagen de Docker
+Para la ejecución mediante la imagen de Docker, ejecutamos el siguiente comando en la terminal para descargar y ejecutar la imagen con todo empaquetado y ejecutara el script.
 ```
-Construir la imagen
-docker build -t metodologias .
-Ejecutar el contenedor
-docker run -it metodologias -a # Puede ser -a o -t según lo que se desee usar
-Una vez ejecutado, podrás navegar por las metodologías disponibles y utilizar el submenú para agregar, buscar, eliminar o leer información.
+docker run -it mbalderramach/metodologias:1.1
 ```
 
 ### Simulación manual de pruebas de principio a fin:
