@@ -80,9 +80,17 @@ chmod +x script.sh # Dar permisos de ejecución
 
 #### Opción 2: Usando la imagen de Docker
 Para la ejecución mediante la imagen de Docker, ejecutamos el siguiente comando en la terminal para descargar y ejecutar la imagen con todo empaquetado y ejecutara el script.
+
+**- Ejecutar el programa con metodologías ágiles**
 ```
-docker run -it mbalderramach/metodologias:1.1
+docker run mbalderrama/metodologias:1.3 -a
 ```
+
+**- Ejecutar con metodologías tradicionales**
+```
+docker run mbalderrama/metodologias:1.3 -t
+```
+
 
 ### Simulación manual de pruebas de principio a fin:
 
