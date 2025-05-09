@@ -306,6 +306,9 @@ read_database() {
         done
         echo "------------------------------------------------------"
     fi
+
+    read -rp $'\n'"Presione Enter para continuar" -n1
+    clear_screen
     
 }
 
