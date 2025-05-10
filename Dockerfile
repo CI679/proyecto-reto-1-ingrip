@@ -10,4 +10,4 @@ COPY . .
 RUN chmod +x script.sh
 
 #Configuracion del comando de inicio
-ENTRYPOINT ["/bin/bash", "./script.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "./script.sh \"$@\"", "--"]

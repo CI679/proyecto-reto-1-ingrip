@@ -218,6 +218,7 @@ search_info() {
     
     if [ -z "$pattern" ]; then
         show_error "El patrón de búsqueda no puede estar vacío"
+        sleep 2  # Pausa para que el usuario vea el mensaje de error
         return
     fi
     
@@ -234,7 +235,8 @@ search_info() {
     # el 'if' evalua si grep tuvo jaló
     # si hay resultados, se imprime una linea separador a
     # si no hay coincidencias imprime que no se encontraron resultados
-
+    echo -e "\nPresione Enter para continuar..."
+    read -r
 }
 
 #funcion para borrar
@@ -311,12 +313,6 @@ read_database() {
     clear_screen
     
 }
-
-
-
-
-
-
 
 #FUNCION MAIN
 main() {
