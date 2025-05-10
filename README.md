@@ -35,7 +35,7 @@ git config --global user.name "Tu Nombre"
 git config --global user.email "tu@email.com"
 ```
 **- Docker**
-Actualizaremos los paquetes e intalaremos las dependencias escribiendo en la terminal lo siguiente:
+Actualizaremos los paquetes e instalaremos las dependencias escribiendo en la terminal lo siguiente:
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -83,12 +83,12 @@ Para la ejecución mediante la imagen de Docker, ejecutamos el siguiente comando
 
 **- Ejecutar el programa con metodologías ágiles**
 ```
-docker run mbalderrama/metodologias:1.3 -a
+docker run -it mbalderramach/metodologias:1.3 -a
 ```
 
 **- Ejecutar con metodologías tradicionales**
 ```
-docker run mbalderrama/metodologias:1.3 -t
+docker run -it mbalderramach/metodologias:1.3 -t
 ```
 
 
